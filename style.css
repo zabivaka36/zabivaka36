@@ -1,0 +1,241 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  background: #0a0a0a;
+  color: #f0f0f0;
+  line-height: 1.5;
+  /* НЕОНОВО-СИНИЙ КРЕСТИК (РАБОЧАЯ ВЕРСИЯ) */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16 4 L16 28 M4 16 L28 16" stroke="%2300aaff" stroke-width="3" stroke-linecap="round"/><path d="M16 6 L16 26 M6 16 L26 16" stroke="white" stroke-width="1" stroke-linecap="round"/><circle cx="16" cy="16" r="4" fill="none" stroke="%2300aaff" stroke-width="2"/></svg>') 16 16, crosshair;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 1.9rem;
+  background: linear-gradient(135deg, #ff2a9d, #ff6ac4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px rgba(255, 42, 157, 0.3);
+}
+
+header p {
+  color: #cccccc;
+  font-size: 1.05rem;
+}
+
+/* ===== ГИФКА СПРАВА СВЕРХУ ===== */
+.corner-gif {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 60px;           /* небольшой размер */
+  height: auto;
+  opacity: 0.7;          /* неяркая, не отвлекает */
+  z-index: 1000;
+  pointer-events: none;  /* чтобы не мешать кликать по кнопкам */
+  mix-blend-mode: screen; /* светлые участки становятся прозрачными, фон сливается с чёрным */
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.corner-gif:hover {
+  opacity: 1;            /* при желании можно убрать или оставить */
+}
+
+/* Если на мобильных мешает — скрываем */
+@media (max-width: 600px) {
+  .corner-gif {
+    display: none;
+  }
+}
+
+/* Панель кнопок сворачивания колонок */
+.column-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-btn, .reset-btn {
+  background: #1f1f1f;
+  border: 1px solid #ff2a9d;
+  color: #ff6ac4;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 3px rgba(255, 42, 157, 0.3);
+}
+
+.toggle-btn:hover, .reset-btn:hover {
+  background: #ff2a9d;
+  color: #0a0a0a;
+  box-shadow: 0 0 12px #ff2a9d;
+  border-color: #ff2a9d;
+}
+
+.reset-btn {
+  border-color: #ff6ac4;
+  color: #ff9ad5;
+}
+
+.reset-btn:hover {
+  background: #ff6ac4;
+  color: #0a0a0a;
+}
+
+/* TOOLBAR (поиск) */
+.toolbar {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#searchInput {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.75rem 1rem;
+  background: #141414;
+  border: 1px solid #ff2a9d;
+  border-radius: 40px;
+  font-size: 1rem;
+  outline: none;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+#searchInput:focus {
+  border-color: #ff6ac4;
+  box-shadow: 0 0 10px #ff2a9d;
+}
+
+/* TABLE WRAPPER */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(255, 42, 157, 0.2);
+}
+
+/* ТАБЛИЦА */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #0d0d0d;
+  font-size: 0.9rem;
+  min-width: 900px;
+}
+
+th, td {
+  border: 1px solid #2a1a2a;
+  padding: 14px 12px;
+  vertical-align: top;
+  text-align: left;
+}
+
+th {
+  background: #111;
+  color: #ff6ac4;
+  font-weight: 700;
+  font-size: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-shadow: 0 0 2px #ff2a9d;
+  border-bottom: 2px solid #ff2a9d;
+}
+
+tbody tr:nth-child(even) td {
+  background-color: #0a0a0a;
+}
+
+tbody tr:hover td {
+  background-color: #1a0f1a;
+  transition: 0.1s;
+  box-shadow: inset 0 0 5px #ff2a9d;
+}
+
+/* СПИСКИ внутри ячеек */
+td ul {
+  margin-left: 1.2rem;
+  padding-left: 0;
+}
+
+td li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  color: #e0e0e0;
+}
+
+td li:last-child {
+  margin-bottom: 0;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid #2a1a2a;
+  padding-top: 1.5rem;
+}
+
+/* АДАПТИВНОСТЬ */
+@media (max-width: 700px) {
+  .container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  th, td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  td ul {
+    margin-left: 1rem;
+  }
+
+  td li {
+    margin-bottom: 0.4rem;
+  }
+
+  .toggle-btn, .reset-btn {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+/* Класс для скрытых колонок (применяется к ячейкам thead и tbody) */
+.hidden-col {
+  display: none;
+}
+
+/* Строки поиска */
+.hidden-row {
+  display: none;
+}

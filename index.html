@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Дорожная карта backend-разработчика | Неоновый стиль</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ГИФКА СПРАВА СВЕРХУ (небольшая, сливается с фоном) -->
+  <img src="justhatemeee2.gif" alt="decor" class="corner-gif">
+
+  <div class="container">
+    <header>
+      <h1>🗺️ Дорожная карта backend-разработчика</h1>
+      <p>Навыки, обязанности и способы развития с 1 курса до позиции Junior/Middle</p>
+    </header>
+
+    <!-- Панель сворачивания колонок -->
+    <div class="column-toggles">
+      <button class="toggle-btn" data-col="0">📘 1 курс</button>
+      <button class="toggle-btn" data-col="1">📙 2 курс</button>
+      <button class="toggle-btn" data-col="2">📒 3 курс</button>
+      <button class="toggle-btn" data-col="3">📗 4 курс</button>
+      <button class="toggle-btn" data-col="4">🎓 После выпуска</button>
+      <button id="resetColumnsBtn" class="reset-btn">⟳ Показать все колонки</button>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="🔍 Поиск по таблице (должность, навык, обязанность...)" autocomplete="off">
+    </div>
+
+    <div class="table-wrapper">
+      <table id="roadmapTable">
+        <thead>
+          <tr>
+            <th>1 курс</th>
+            <th>2 курс</th>
+            <th>3 курс</th>
+            <th>4 курс</th>
+            <th>После выпуска</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Строка: Место практики и должность -->
+          <tr>
+            <td>Backend-разработчик</td>
+            <td>Студент / Младший стажёр в IT-компании</td>
+            <td>Студент-стажёр / Junior Backend разработчик</td>
+            <td>Преддипломная практика / Junior+ Backend разработчик</td>
+            <td>Junior/Middle Backend разработчик</td>
+          </tr>
+          <!-- Строка: Функциональные обязанности -->
+          <tr>
+            <td><ul><li>Разработка серверной логики</li><li>Создание и оптимизация API (REST, GraphQL)</li><li>Работа с базами данных (SQL, NoSQL)</li><li>Обеспечение безопасности и аутентификации</li></ul></td>
+            <td><ul><li>Писать простые серверные скрипты (Node.js)</li><li>Работать с базами данных (простые запросы SELECT, INSERT)</li><li>Создавать базовые REST API (GET, POST)</li><li>Использовать Git и GitHub для сдачи заданий</li><li>Покрывать код простыми тестами (Jest)</li></ul></td>
+            <td><ul><li>Разрабатывать REST API и документацию (Swagger)</li><li>Писать миграции и простые хранимые процедуры</li><li>Участвовать в код-ревью</li><li>Исправлять баги в существующем коде</li><li>Настраивать Docker Compose для локальной разработки</li></ul></td>
+            <td><ul><li>Поддержка и развитие прод-проекта</li><li>Написание сложных SQL-запросов и оптимизация</li><li>Интеграция с внешними API (платёжные системы, SMS)</li><li>Участие в планировании спринта (Scrum)</li><li>Помощь младшим стажёрам</li><li>Написание технической документации</li></ul></td>
+            <td><ul><li>Разработка и поддержка серверной логики и API (REST, GraphQL)</li><li>Работа с базами данных (SQL, NoSQL) и оптимизация запросов</li><li>Участие в код-ревью, написание тестов и документации</li><li>Настройка CI/CD, контейнеризация (Docker, K8s)</li><li>Проектирование микросервисов и отказоустойчивость</li><li>Мониторинг, логирование и обеспечение безопасности</li></ul></td>
+          </tr>
+          <!-- Строка: Навыки, которыми обладаю/буду обладать -->
+          <tr>
+            <td><ul><li>Написание кода на JavaScript</li><li>Генерация и редактирование кода при помощи ИИ</li></ul></td>
+            <td><ul><li>Написание кода на JavaScript (основы)</li><li>Генерация и редактирование кода при помощи ИИ</li><li>Понимание асинхронности (callback, promise)</li><li>Основы SQL (SELECT, JOIN)</li><li>Умею создавать простые HTML-страницы и работать с JSON</li></ul></td>
+            <td><ul><li>Уверенное владение Node.js и Express</li><li>Работа с PostgreSQL (JOIN, индексы, агрегации)</li><li>JWT-аутентификация, хеширование паролей</li><li>Базовые навыки Docker и Docker Compose</li><li>Написание тестов (unit + integration)</li></ul></td>
+            <td><ul><li>TypeScript, NestJS или другой фреймворк</li><li>Docker, CI/CD (GitLab CI)</li><li>Работа с индексами и партиционированием</li><li>Брокеры сообщений (базово)</li><li>Опыт деплоя на облачные серверы (Yandex Cloud, AWS)</li></ul></td>
+            <td><ul><li>Написание кода на JavaScript (Node.js)</li><li>Базовые знания Docker, K8s, CI/CD</li><li>Работа с SQL и NoSQL, JWT, OAuth2</li><li>Понимание REST API и основ GraphQL</li><li>Чистая архитектура и паттерны (базово)</li></ul></td>
+          </tr>
+          <!-- Строка: Навыки, которые получу -->
+          <tr>
+            <td><ul><li>Разработка микросервисной архитектуры</li><li>Работа с контейнеризацией (Docker, Kubernetes)</li><li>Настройка CI/CD пайплайнов</li></ul></td>
+            <td><ul><li>Работа с Express.js и маршрутизация</li><li>Аутентификация (сессии, JWT)</li><li>Подключение к PostgreSQL или MongoDB</li><li>Обработка ошибок и валидация данных</li><li>Написание простых Dockerfile</li><li>Основы CI/CD (запуск тестов в GitHub Actions)</li></ul></td>
+            <td><ul><li>Проектирование архитектуры простых микросервисов</li><li>Очереди сообщений (RabbitMQ или Redis)</li><li>Работа с TypeScript</li><li>Настройка Nginx как reverse proxy</li><li>Логирование (Winston, Morgan)</li><li>Основы мониторинга (Prometheus)</li></ul></td>
+            <td><ul><li>Проектирование отказоустойчивых систем</li><li>Работа с Kubernetes (minikube, deployment)</li><li>GraphQL (Apollo Server)</li><li>Автоматическое тестирование и TDD</li><li>Мониторинг и алерты (Grafana)</li><li>Оценка трудоёмкости задач</li></ul></td>
+            <td><ul><li>Высоконагруженные распределённые системы</li><li>Продвинутая оркестрация (Service Mesh, ArgoCD)</li><li>Шардирование, партиционирование, транзакции SAGA</li><li>Observability (tracing, Prometheus, Grafana, ELK)</li><li>Техническое лидерство и менторство</li><li>Оптимизация затрат в облаке и бюджетирование</li></ul></td>
+          </tr>
+          <!-- Строка: Как я получу эти навыки -->
+          <tr>
+            <td><ul><li>Выполняя реальные проекты на стажировке</li><li>Работая в команде над бэкенд-задачами</li><li>Проходя онлайн курсы (Node.js, Python, базы данных)</li></ul></td>
+            <td><ul><li>Выполняя лабораторные работы и курсовые проекты</li><li>Проходя онлайн-курсы (Node.js, SQL)</li><li>Работая в команде над учебным проектом</li><li>Изучая документацию Express и MongoDB</li><li>Повторяя примеры из видеоуроков</li><li>Практикуясь на небольших pet-проектах</li></ul></td>
+            <td><ul><li>Участвуя в реальном стажировочном проекте</li><li>Проходя практику в компании</li><li>Изучая курс "Архитектура программных систем"</li><li>Выполняя кейс-чемпионаты и хакатоны</li><li>Читая статьи на Habr и Medium</li><li>Создавая свой pet-проект (например, интернет-магазин)</li></ul></td>
+            <td><ul><li>Проходя преддипломную практику в компании</li><li>Выполняя выпускную квалификационную работу</li><li>Участвуя в митапах и конференциях</li><li>Проходя продвинутые онлайн-курсы (K8s, System Design)</li><li>Решая задачи с LeetCode и Codewars</li></ul></td>
+            <td><ul><li>Работая над реальными production-проектами</li><li>Участвуя в код-ревью и архитектурных митапах</li><li>Проходя онлайн-курсы (System Design, Kafka, K8s)</li><li>Читая книги (Designing Data-Intensive Applications)</li><li>Практикуясь в open-source и pet-проектах</li><li>Получая обратную связь от сеньоров</li></ul></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>© 2026 • Дорожная карта backend-разработчика</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
